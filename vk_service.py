@@ -19,7 +19,7 @@ def fetch_friends(user_id: int, count: int = 100) -> Dict[str, Any]:
         return call_vk_api('friends.get', {
             'user_id': user_id,
             'count': count,
-            'fields': 'first_name,last_name,deactivated'
+            'fields': 'first_name,last_name,deactivated,domain'
         })
     except VKAPIException as e:
         if e.code in [15, 30, 18]:

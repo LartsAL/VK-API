@@ -61,7 +61,10 @@ def display_friends(user_id: int, user_name: str):
     print(f"First {friends_to_display} friends of {user_name} ({max_friends} total):")
 
     for i, friend in enumerate(friends[:friends_to_display], 1):
-        friend_name = f"{friend['first_name']} {friend['last_name']}"
+        tag = friend.get('domain')
+        id_or_tag = f"{tag}"
+
+        friend_name = f"{friend['first_name']} {friend['last_name']} ({id_or_tag})"
         status = " (deactivated)" if friend.get('deactivated') else ""
         print(f"{i}. {friend_name}{status}")
 
