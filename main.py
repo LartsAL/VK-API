@@ -84,12 +84,17 @@ def display_albums(user_id: int, user_name: str):
 
 
 def main():
-    while True:
-        identifier = input("Enter VK user ID or username (or q to quit): ").strip()
-        if identifier.lower() == 'q':
-            break
-        if identifier:
-            display_user_info(identifier)
+    try:
+        while True:
+            identifier = input("Enter VK user ID or username (or q to quit): ").strip()
+            if identifier.lower() == 'q':
+                break
+            if identifier:
+                display_user_info(identifier)
+    except KeyboardInterrupt:
+        print("Interrupted by Ctrl+C")
+    except Exception as e:
+        print(f"ERROR: Unexpected error: {e}")
 
 
 if __name__ == "__main__":
