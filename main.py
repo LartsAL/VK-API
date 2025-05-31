@@ -92,7 +92,7 @@ def main():
             if identifier:
                 display_user_info(identifier)
     except KeyboardInterrupt:
-        print("Interrupted by Ctrl+C")
+        print("\nInterrupted by Ctrl+C")
     except Exception as e:
         print(f"ERROR: Unexpected error: {e}")
 
